@@ -85,9 +85,15 @@ void MostraFila(Fila *q){
 void MostraMatriz(int ma[9][16])
 {
     int i,j;
-    for (i=0; i<9; i++){
-        printf("\n");
-        for (j=0; j<16; j++){
+    printf("\t");
+    for(i=0; i<17; i++){
+        printf("%i\t",i);
+    }
+    for (i=0; i<=9; i++){
+        printf("\n%i", i);
+
+        for (j=0; j<=16; j++){
+          //  printf("%i", j);
             printf("\t%i", ma[i][j]);
         } 
     }
@@ -97,8 +103,8 @@ void MostraMatriz(int ma[9][16])
 void NovoJogo(int ma[][16])
 {
     int i,j; 
-    for (i=0; i<9; i++){
-      for (j=0; j<16; j++){
+    for (i=0; i<=9; i++){
+      for (j=0; j<=16; j++){
         ma[i][j] = rand() % 4;
 
         while (ma[i][j]==0){
@@ -116,15 +122,14 @@ int main(){
     int rem, i, j;
     int matriz[9][16];
     int perdeu=0;
-    int l=9, c=16;
 
     NovoJogo(matriz);
     InicializaFila(&fi);
 
     while (!perdeu){
-        printf("\n Escolha uma linha \n\t");;
+        printf("\n\nEscolha uma linha: \n");;
         scanf("%d", &i);
-        printf("\n Escolha uma coluna \n\t");;
+        printf("\n\nEscolha uma coluna: \n");;
         scanf("%d", &j);
 
 
